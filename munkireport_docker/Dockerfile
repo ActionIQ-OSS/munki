@@ -15,7 +15,9 @@ RUN mkdir /var/www/munkireport
 
 WORKDIR /var/www/munkireport
 
-RUN curl -L -o ./munkireport-php.tar.gz https://github.com/munkireport/munkireport-php/archive/v2.15.2.tar.gz
+# to update the version of munkireport, download the most recent version similar to https://github.com/munkireport/munkireport-php/archive/v2.15.2.tar.gz
+# eg change v2.15.2 in the above url to v2.16.0 
+COPY munkireport-php-2.15.2.tar.gz ./munkireport-php.tar.gz
 RUN tar -zxvf munkireport-php.tar.gz --strip-components=1
 RUN rm munkireport-php.tar.gz
 
